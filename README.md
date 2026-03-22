@@ -90,8 +90,6 @@ CREATE TABLE worklogs (
 ---
 
 ## 📸 Screenshot
-You can add screenshots of your system here, such as:
-- Login page
 - Dashboard page
 - Worklog management page
 
