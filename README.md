@@ -93,9 +93,7 @@ CREATE TABLE worklogs (
 - Dashboard page
 - Worklog management page
 
-Example:
-```markdown
-![Dashboard Screenshot](images/dashboard.png)
+
 ```
 
 ---
