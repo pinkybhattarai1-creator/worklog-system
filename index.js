@@ -5,7 +5,6 @@ const mysql = require('mysql2');
 
 const app = express();
 
-// ใช้ middleware
 app.use(cors());
 app.use(bodyparser.json());
 
@@ -26,13 +25,7 @@ db.connect(err => {
     console.log('database connected..');
 });
 
-// ---------------------------
-//   API ระบบบันทึกงาน
-//   table: worklogs
-//   columns: id, title, detail, work_date, hours, status
-// ---------------------------
 
-// get all data
 app.get('/worklogs', (req, res) => {
     let qr = 'select * from worklogs';
 
