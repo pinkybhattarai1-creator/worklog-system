@@ -1,0 +1,28 @@
+<div class="min-vh-100 d-flex align-items-center" style="background: linear-gradient(135deg, #fce1ff, #d9ecff);">
+  <div class="container">
+    <div class="card shadow-lg border-0" style="border-radius: 18px;">
+      <div class="card-header text-white" style="background: linear-gradient(90deg, #ff7eb3, #ff758c); border-radius: 18px 18px 0 0;">
+        <h2 class="mb-0 text-center">🌟 ระบบบันทึกงาน 🌟</h2>
+      </div>
+
+      <div class="card-body" style="background-color: #ffffff; border-radius: 0 0 18px 18px;">
+        <p class="text-center text-muted mb-4">
+          บันทึกสิ่งที่คุณทำในแต่ละวัน และติดตามความคืบหน้าของงานได้ง่าย ๆ
+        </p>
+
+        <div class="d-flex justify-content-center mb-3 gap-2">
+          <a routerLink="create" class="btn btn-success px-4">
+            ➕ เพิ่มบันทึกงาน
+          </a>
+          <a routerLink="read" class="btn btn-primary px-4">
+            📋 ดูรายการบันทึกงาน
+          </a>
+        </div>
+
+        <hr>
+
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</div>

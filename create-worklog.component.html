@@ -1,0 +1,74 @@
+<div class="mt-3">
+
+  <div class="card border-0 shadow-sm" style="border-left: 6px solid #28a745; border-radius: 14px;">
+    <div class="card-body">
+      <h4 class="mb-3">
+        ✏️ สร้างบันทึกงาน (Create Worklog)
+      </h4>
+
+      <form [formGroup]="workForm" (ngSubmit)="workSubmit()">
+
+        <div class="mb-3">
+          <label class="form-label">ชื่องาน</label>
+          <input type="text" class="form-control" formControlName="title">
+          <div class="text-danger small mt-1"
+               *ngIf="workForm.controls['title'].invalid && workForm.controls['title'].touched">
+            ต้องกรอกชื่องาน
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">รายละเอียด</label>
+          <textarea class="form-control" rows="3" formControlName="detail"
+                    placeholder="สรุปสิ่งที่ทำ หรืองานที่ต้องทำต่อ..."></textarea>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4 mb-3">
+            <label class="form-label">วันที่ทำงาน</label>
+            <input type="date" class="form-control" formControlName="work_date">
+            <div class="text-danger small mt-1"
+                 *ngIf="workForm.controls['work_date'].invalid && workForm.controls['work_date'].touched">
+              ต้องเลือกวันที่ทำงาน
+            </div>
+          </div>
+
+          <div class="col-md-4 mb-3">
+            <label class="form-label">ชั่วโมงที่ใช้</label>
+            <input type="number" class="form-control" formControlName="hours" step="0.25" min="0" placeholder="เช่น 1.5">
+            <div class="text-danger small mt-1"
+                 *ngIf="workForm.controls['hours'].invalid && workForm.controls['hours'].touched">
+              ต้องกรอกจำนวนชั่วโมง
+            </div>
+          </div>
+
+          <div class="col-md-4 mb-3">
+            <label class="form-label">สถานะ</label>
+            <select class="form-select" formControlName="status">
+              <option value="กำลังทำ">กำลังทำ</option>
+              <option value="เสร็จแล้ว">เสร็จแล้ว</option>
+              <option value="รอตรวจ">รอตรวจ</option>
+            </select>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-success me-2">
+          ✅ บันทึกงาน
+        </button>
+        <button type="reset" class="btn btn-outline-secondary"
+                (click)="workForm.reset({status: 'กำลังทำ'})">
+          🧹 ล้างฟอร์ม
+        </button>
+
+      </form>
+
+      <div class="mt-3 text-success" *ngIf="successmsg">
+        ✅ {{ successmsg }}
+      </div>
+      <div class="mt-3 text-danger" *ngIf="errormsg">
+        ⚠️ {{ errormsg }}
+      </div>
+    </div>
+  </div>
+
+</div>
